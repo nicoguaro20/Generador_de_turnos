@@ -1,7 +1,12 @@
-console.log("Se está ejecutando");
+import server from "./server";
+import "reflect-metadata";
+import { PORT } from "./config/envs";
+import { AppDataSource } from "./config/data-source";
 
-let a = 1;
-let b = 2;
-let c = a + b;
-
-console.log(c);
+AppDataSource.initialize()
+    .then( res => {
+        console.log("Conexión a la base de datos realizada con exito");
+        server.listen(PORT, ()=> {
+            console.log(`server listening on port ${PORT}`)
+            })
+});

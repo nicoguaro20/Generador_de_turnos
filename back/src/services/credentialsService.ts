@@ -8,7 +8,7 @@ export const createCredential = async (credentialDto: ICredentialDto): Promise<C
     return newCredential;
 };
 
-export const validateCredential = async (credentialDto: ICredentialDto): Promise<number> => {
+export const validateCredential = async (credentialDto: ICredentialDto): Promise<Credential> => {
     const {username, password} = credentialDto;
     const foundCredential: Credential | null = await CredentialModel.findOneBy({username})
     if(!foundCredential){
@@ -16,6 +16,6 @@ export const validateCredential = async (credentialDto: ICredentialDto): Promise
     } else if(foundCredential && foundCredential.password !== password){
         throw Error("El usuario o la contraseña son incorrectos")
     } else {
-        return foundCredential.id
+        return foundCredential
     }
 };
