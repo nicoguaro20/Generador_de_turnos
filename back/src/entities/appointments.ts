@@ -12,7 +12,7 @@ class Appointment {
 	date: Date;
 
 	@Column()
-	subject: string;
+	time: string;
 
 	@Column({
 		default: "Active"
