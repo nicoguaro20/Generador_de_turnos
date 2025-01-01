@@ -1,10 +1,26 @@
-import { useState } from "react";
-import MyAppointmentsPreLoad from "../../helpers/MyAppointments";
+import { useState, useEffect } from "react";
 import Appointment from "../../components/Appointment/appointment";
-
+import axios from "axios";
 
 const MyAppointments = () => {
-    const [ appointments, setAppointments] = useState(MyAppointmentsPreLoad);
+    const [ appointments, setAppointments] = useState([]);
+    
+    //MONTAJE DEL COMPONENTE//
+
+    useEffect(() => {
+        const fetchData = async() => {
+            try {
+                const response = await axios.get("http://localhost:3002/appointments")
+                setAppointments(response.data)
+            } catch (error) {
+                console.log(error)
+            }
+        };
+
+        fetchData();
+
+    }, [])
+
     return(
         <div>
             <h1>My Appointments</h1>
