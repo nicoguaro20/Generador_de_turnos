@@ -4,16 +4,87 @@
     display: flex;
     width: 100%;
     box-sizing: border-box;
-    border: 1px solid black;
+    border: 1px solid red;
     align-items: center;
-    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
     padding: 0;
     margin: 0;
     list-style: none;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-around;
     font-family: "Rubik", sans-serif;
     font-weight: 550;
     color: rgb(235, 222, 222);
     background-color: rgba(0, 0, 0, 0.55);
+}
+
+.firstDiv {
+    width: 100%;
+    min-height: 20px;
+    margin-left: 0px;
+    margin-right: 0px;
+    border: 1px solid yellow;
+    flex-direction: row;
+    display:flex;
+    font-family: "Rubik", sans-serif;
+    font-weight: 500;
+    font-size: 0.75em;
+    background-color: rgba(56, 56, 56, 0.90);
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.firstDiv p {
+    width: 325px;
+    border: 1px red solid;
+    margin: 0;
+    padding: 0;
+    margin-top: 1,5;
+    margin-bottom: 1,5px;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+}
+
+.firstDiv a,
+.secondDiv a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.secondDiv {
+    width: 100%;
+    min-height: 45px;
+    margin-left: 0px;
+    margin-right: 0px;
+    border: 1px solid yellow;
+    flex-direction: row;
+    display:flex;
+    font-family: "Rubik", sans-serif;
+    font-weight: 575;
+    font-size: 1,1 em;
+    background-color: rgba(56, 56, 56, 0.90);
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    color: white;
+}
+
+.secondDiv p {
+    border: 1px green solid;
+    width: 100px;
+    color: inherit;
+    text-decoration: none; 
+    text-align: center;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+body {
+    padding-top: 75px; /* Ajusta según la altura de la barra */
 }

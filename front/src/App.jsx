@@ -1,9 +1,9 @@
 import "./App.css";
 import Home from "./views/home/home";
-import MyAppointments from "./views/MyAppointments/MyAppointments";
 import Login from "./views/login/login";
+import MyAppointments from "./views/MyAppointments/MyAppointments";
 import Register from "./views/register/register";
-import { Routes, Route } from "react";
+import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
 
 
