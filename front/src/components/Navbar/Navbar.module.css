@@ -1,54 +1,60 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap');
 
+.hidden {
+    transform: translateY(-100%);
+    transition: transform 1.5s ease-in-out;
+}
+
+.moved {
+    transform:translateY(-25px);
+}
+
 .navbarContainer {
-    display: flex;
     width: 100%;
-    box-sizing: border-box;
-    border: 1px solid red;
-    align-items: center;
     position: fixed;
     top: 0;
     left: 0;
-    right: 0;
     z-index: 1000;
     padding: 0;
     margin: 0;
     list-style: none;
+    box-sizing: border-box;
+    display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    font-family: "Rubik", sans-serif;
-    font-weight: 550;
-    color: rgb(235, 222, 222);
-    background-color: rgba(0, 0, 0, 0.55);
 }
 
 .firstDiv {
     width: 100%;
-    min-height: 20px;
-    margin-left: 0px;
-    margin-right: 0px;
-    border: 1px solid yellow;
-    flex-direction: row;
-    display:flex;
-    font-family: "Rubik", sans-serif;
-    font-weight: 500;
-    font-size: 0.75em;
-    background-color: rgba(56, 56, 56, 0.90);
+    height: 25px;
+    margin: 0;
+    padding: 0;
+    display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    font-family: "Rubik", sans-serif;
+    font-weight: 450;
+    font-size: 0.65em;
+    background-color: rgba(56, 56, 56, 0.90);
+    color: #e6e6e6; 
+    position: relative;
+    transition: transform 1.5s ease-in-out;
+}
+
+.firstDiv h2 {
+    display: none;
 }
 
 .firstDiv p {
-    width: 325px;
-    border: 1px red solid;
+    width: 280px;
+/*  border: 1px red solid; */
     margin: 0;
     padding: 0;
-    margin-top: 1,5;
-    margin-bottom: 1,5px;
+    margin-top: 1.5;
+    margin-bottom: 1.5px;
     display: flex;
     justify-content: center;
-    align-items:center;
+    align-items: center;
 }
 
 .firstDiv a,
@@ -59,32 +65,53 @@
 
 .secondDiv {
     width: 100%;
-    min-height: 45px;
-    margin-left: 0px;
-    margin-right: 0px;
-    border: 1px solid yellow;
-    flex-direction: row;
-    display:flex;
-    font-family: "Rubik", sans-serif;
-    font-weight: 575;
-    font-size: 1,1 em;
-    background-color: rgba(56, 56, 56, 0.90);
+    height: 45px;
+    margin: 0;
+    padding: 0;
+    display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    color: white;
+    font-family: "Rubik", sans-serif;
+    font-weight: 550;
+    font-size: 1em;
+    background-color: rgba(56, 56, 56, 0.90);
+    color: #e6e6e6;
+    border-top: 1.6px solid yellow;
+    position: absolute;
+    top: 25px;
+    transition: transform 1.5s ease-in-out;
 }
 
 .secondDiv p {
-    border: 1px green solid;
     width: 100px;
+    min-height: 25px;
     color: inherit;
-    text-decoration: none; 
+    text-decoration: none;
     text-align: center;
-    margin-left: 10px;
-    margin-right: 10px;
+    justify-content: center;
+    margin-left: 7.5px;
+    margin-right: 7.5px;
+    align-items: center;
+    display: flex;
+}
+
+.secondDiv p:hover {
+    color: white;
+    font-size: 1.05em;
+    font-weight: 554;
 }
 
 body {
-    padding-top: 75px; /* Ajusta según la altura de la barra */
+    padding-top: 75px;
+}
+
+@media (max-width: 860px) {
+    .firstDiv p {
+        display: none;
+    }
+
+    .firstDiv h2 {
+        display: block;
+    }
 }

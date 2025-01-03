@@ -5,10 +5,13 @@ import MyAppointments from "./views/MyAppointments/MyAppointments";
 import Register from "./views/register/register";
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
+import { useContext } from "react";
+import { TodosContext } from "./context/Todos"
 
-
-console.log({ Home, MyAppointments, Login, Register });
 function App() {
+
+  const {todos} = useContext(TodosContext);
+
 
   return(
     <>

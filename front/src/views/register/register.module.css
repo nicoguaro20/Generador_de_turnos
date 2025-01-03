@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap');
+
+.registerContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid red;
+    font-family: "Rubik", sans-serif;
+    width: 100%;
+    min-height: 500px;
+    margin: 0;
+    display: flex;
+}
+
+.registerContainer h1 {
+    display: flex;
+    border: 2px solid black;
+    width: 75%; 
+    height: 75px;
+    align-items: center;
+    font-size: 1.7em;
+    font-weight: 625;
+    color: rgba(56, 56, 56);
+}
+
+.registerContainer form {
+    border: 2px solid yellow;
+    width: 75%;
+    font-size: 1em;
+    font-weight: 550;
+    color: rgba(56, 56, 56);
+}
+
+.registerContainer form div{
+    border: 2px solid green;
+    display: flex;
+    min-height: 25px;
+    margin-top: 2.75px;
+    margin-bottom: 2.75px;
+}
+
+label {
+    border: 2px solid red;
+    width: 205px;
+    display: block;
+}
+
+.registerContainer form div field{
+    border: 2px solid green;
+    display: flex;
+}
+
+.field_1 {
+    border: 2px solid blue;
+    width: 250px;
+    align-items: center;
+    font-family: "Rubik", sans-serif;
+}
+
+.field_2 {
+    border: 2px solid orange;
+    width: 200px;
+    align-items: center;
+    font-family: "Rubik", sans-serif;
+}

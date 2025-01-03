@@ -1,33 +1,49 @@
-import style from "./Navbar.module.css";
+import React, { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
+import style from "./Navbar.module.css";
 
 const Navbar = () => {
-    return (
-        <nav className = {style.navbarContainer}>
+  const firstDivRef = useRef(null);
+  const secondDivRef = useRef(null);
+  let lastScrollTop = 0;
 
-            <div className = {style.firstDiv}>
-                <p>Email: <a href="mailto:jungarciagu@unal.edu.co">info@universa.com.co</a></p>
-                <p>Teléfono: <a href="tel: 6042765194"> (+57) 604 276 51 94 </a></p>
-                <p>Dirección: Calle 10#32-115 Of 400, Medellín - Colombia</p>
-            </div>
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
 
-            <div className = {style.secondDiv}>
-           
-                <Link to="/home">
-                    <p>UNIVERSA</p>
-                </Link>
+      if (currentScroll > lastScrollTop) {
+        firstDivRef.current.classList.add(style.hidden);
+        secondDivRef.current.classList.add(style.moved);
+      } else {
+        firstDivRef.current.classList.remove(style.hidden);
+        secondDivRef.current.classList.remove(style.moved);
+      }
 
-                <Link to="/login">
-                    <p>Login</p>
-                </Link>
+      lastScrollTop = Math.max(0, currentScroll);
+    };
 
-                <Link to="/register">
-                    <p>Register</p>
-                </Link>
+    window.addEventListener("scroll", handleScroll);
 
-            </div>
-        </nav>
-    )
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  return (
+    <nav className={style.navbarContainer}>
+      <div ref={firstDivRef} className={style.firstDiv}>
+        <p>Email: <a href="mailto:jungarciagu@unal.edu.co">info@universa.com.co</a></p>
+        <p>Teléfono: <a href="tel: 6042765194">(+57) 604 276 51 94</a></p>
+        <p>Dirección: Calle 10#32-115 Of 400, Medellín - Colombia</p>
+        <h2>!Bienvenidos a nuestro sitio web!</h2>
+      </div>
+      <div ref={secondDivRef} className={style.secondDiv}>
+        <Link to="/home"><p>UNIVERSA</p></Link>
+        <Link to="/login"><p>Login</p></Link>
+        <Link to="/register"><p>Register</p></Link>
+      </div>
+    </nav>
+  );
 };
 
 export default Navbar;
