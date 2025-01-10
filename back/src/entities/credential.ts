@@ -14,7 +14,6 @@ class Credential {
 	username: string;
 
 	@Column({
-        select: false
     })
 	password: string;
 };

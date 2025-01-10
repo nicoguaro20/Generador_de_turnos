@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap');
 
-.registerContainer {
+.loginContainer {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -12,7 +12,7 @@
     display: flex;
 }
 
-.registerContainer h1 {
+.loginContainer h1 {
     display: flex;
     border-bottom: 2.5px solid black;
     width: 75%; 
@@ -23,20 +23,19 @@
     color: rgba(56, 56, 56);
 }
 
-.registerContainer form {
+.loginContainer form {
     width: 75%;
     font-size: 1em;
     font-weight: 550;
     color: rgba(56, 56, 56);
 }
 
-.registerContainer form div{
+.loginContainer form div{
     display: flex;
     min-height: 25px;
     margin-top: 1px;
     margin-bottom: 1px;
     flex-wrap: wrap;
-
 }
 
 label {
@@ -48,7 +47,7 @@ label {
     font-weight: 600;
 }
 
-.field_1 {
+input {
     width: 250px;
     height: 20px;
     display: flex;
@@ -57,32 +56,14 @@ label {
     margin: 1.5px;
 }
 
-.field_2 {
-    width: 200px;
-    height: 20px;
-    display: flex;
-    align-items: center;
-    font-family: "Rubik", sans-serif;
-    margin: 1.5px;
-}
-
-.field_1::placeholder {
+input::placeholder {
     font-family: "Rubik", sans-serif;
     font-size: 1em;
     font-weight: 585;
     color: rgb(186, 183, 183);
-
 }
 
-.field_2::placeholder {
-    font-family: "Rubik", sans-serif;
-    font-size: 1em;
-    font-weight: 585;
-    color: rgb(186, 183, 183);
-
-}
-
-h3 {
+span {
     width: 250px;
     height: 14px;
     display: flex;
@@ -118,9 +99,8 @@ h3 {
     background-color: #0056b3; /* Color de hover de Bootstrap */
 }
 
-
 @media (max-width: 1130px) {
-    .registerContainer form div{
+    .loginContainer form div{
         display: flex;
         flex-direction: column;
         align-items: flex-start;

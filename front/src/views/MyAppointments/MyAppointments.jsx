@@ -1,44 +1,52 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import Appointment from "../../components/Appointment/appointment";
 import axios from "axios";
+import style from "./MyAppointments.module.css";
+import { useUser } from "../../context/userContext";
+import { useNavigate, Link } from "react-router-dom";
 
-const MyAppointments = () => {
-    const [ appointments, setAppointments] = useState([]);
+const MyAppointments = () => { 
+    const navigate = useNavigate();
+    const { user, setUserAppointments, userAppointments } = useUser();
     
-    //MONTAJE DEL COMPONENTE//
-
     useEffect(() => {
-        const fetchData = async() => {
+        const fetchData = async () => {
             try {
-                const response = await axios.get("http://localhost:3002/appointments")
-                setAppointments(response.data)
+                const response = await axios.get(`http://localhost:3002/users/${user.id}`);
+                setUserAppointments(response.data.appointments);
             } catch (error) {
-                console.log(error)
+                console.log(error);
             }
         };
 
-        fetchData();
+        if (!user.name) {
+            navigate("/newappointment");
+        } else {
+            fetchData();
+        }
+    }, [user.name, setUserAppointments, navigate]);
 
-    }, [])
-
-    return(
-        <div>
+    return (
+        <div className={style.appointmentsDiv}>
             <h1>My Appointments</h1>
-            {
-                appointments.length ? (
-                    appointments.map((appointment) => {
-                        return(
-                            <Appointment key = {appointment.id}
-                                date = {appointment.date}
-                                time = {appointment.time}
-                                description = {appointment.description}
-                                status = {appointment.status}
-                            />
-                        )
 
-                    })
+            <Link to="/newappointment">
+                <p className={style.newAppointment}>New Appointment</p>
+            </Link>
+
+            {
+                userAppointments.length ? (
+                    userAppointments.map((appointment) => (
+                        <Appointment key={appointment.id}
+                            id={appointment.id}
+                            date={appointment.date}
+                            time={appointment.time}
+                            description={appointment.description}
+                            status={appointment.status}
+                        />
+                    ))
                 ) : (
-                    <div>No tienes ningún turno</div>
+                    <div className={style.noAppointments}>No tienes ningún turno</div>
                 )
             }
         </div>

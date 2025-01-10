@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap');
+
+
+.appointmentContainer {
+    width: 75%;
+    min-height: 70px;
+    font-family: "Rubik", sans-serif;
+    font-size: 1em;
+    font-weight: 550;
+    color: rgba(56, 56, 56);
+    border-bottom:0.25px solid rgba(56, 56, 56);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    transition: background-color 1.25s ease;
+}
+
+.appointmentContainer:hover {
+    background-color: rgb(238, 232, 232);
+}
+
+.generalContainer {
+    width: 75%;
+}
+
+.dateContainer {
+    width: 100%;
+    display:flex;
+    border-bottom: 0.15px solid yellow;
+}
+
+.dateTitleContainer {
+    width: 110px;
+    height: 15px;
+    font-family: "Rubik", sans-serif;
+    font-size: 0.9em;
+    font-weight: 570;
+    display:flex;
+    align-items: center;
+    text-align: center;
+    justify-content: left;
+}s
+
+.dateContainer p {
+    width: 220px;
+    height: 15px;
+    display:flex;
+    font-family: "Rubik", sans-serif;
+    font-size: 0.9em;
+    font-weight: 475;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.appointmentContainer button {
+    width: 25%;
+    height: 40px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 10px;
+}
+
+.appointmentContainer button:hover {
+    background-color: #0056b3; /* Color de hover de Bootstrap */
+}
+
+.pContainer {
+    width: 100%;
+    height: 15px;
+    font-family: "Rubik", sans-serif;
+    font-size: 0.9em;
+    font-weight: 475;
+    display:flex;
+    align-items: center;
+    color: rgba(56, 56, 56);
+}
+
+@media (max-width: 1010px) {
+    .appointmentContainer {
+        min-height: 110px;
+    }
+
+    .dateContainer {
+        width: 100%;
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .dateTitleContainer {
+        width: 100%;
+        height: 15px;
+        font-family: "Rubik", sans-serif;
+        font-size: 0.9em;
+        font-weight: 570;
+        display:flex;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .dateContainer p {
+        width: 100%;
+        height: 15px;
+        display:flex;
+        font-family: "Rubik", sans-serif;
+        font-size: 0.9em;
+        font-weight: 475;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .pContainer {
+        width: 100%;
+        height: 30px;
+        font-family: "Rubik", sans-serif;
+        font-size: 0.9em;
+        font-weight: 475;
+        display:flex;
+        align-items: center;
+        color: rgba(56, 56, 56);
+    }
+}

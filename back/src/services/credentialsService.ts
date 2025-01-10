@@ -13,9 +13,10 @@ export const validateCredential = async (credentialDto: ICredentialDto): Promise
     const foundCredential: Credential | null = await CredentialModel.findOneBy({username})
     if(!foundCredential){
         throw Error("Usuario inexistente")
-    } else if(foundCredential && foundCredential.password !== password){
-        throw Error("El usuario o la contraseña son incorrectos")
-    } else {
-        return foundCredential
     }
+    if(foundCredential.password !== password){
+        throw Error("El usuario o la contraseña son incorrectos")
+    }
+    
+    return foundCredential
 };
