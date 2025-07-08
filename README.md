@@ -4,7 +4,15 @@ Bienvenido al sistema de generación de turnos desarrollado para **Universa Inve
 Este proyecto permite organizar y gestionar turnos de manera eficiente a través de una interfaz moderna y amigable.
 
 <p align="center">
-  <img src="assets/hero-universa.png" alt="Banner" width="80%"/>
+  <img src="assets/pm2_1.jpg" alt="Banner" width="80%"/>
+</p>
+
+<p align="center">
+  <img src="assets/pm2_2.jpg" alt="Banner" width="80%"/>
+</p>
+
+<p align="center">
+  <img src="assets/pm2_3.jpg" alt="Banner" width="80%"/>
 </p>
 
 ---
@@ -46,11 +54,8 @@ Desde allí, los visitantes pueden **registrarse, iniciar sesión y acceder a su
 ## 📸 Capturas de pantalla
 
 <p align="center">
-  <img src="assets/img1.png" width="80%" alt="Inicio"/>
-  <img src="assets/img2.png" width="80%" alt="Login"/>
-  <img src="assets/img3.png" width="80%" alt="Registro"/>
-  <img src="assets/img4.png" width="80%" alt="Dashboard"/>
-  <img src="assets/img5.png" width="80%" alt="Turno generado"/>
+  <img src="assets/pm2_4.jpg" width="80%">
+  <img src="assets/pm2_5.jpg" width="80%">
 </p>
 
 ---
